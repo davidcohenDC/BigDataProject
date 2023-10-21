@@ -1,0 +1,70 @@
+@startuml erDiagram
+
+!define table(x) class x << (T,#FFAAAA) >>
+!define entity(x) class x << (E,#AAAAFF) >>
+
+entity "App_ID_Info" {
+  +**appid**: int(10) unsigned (PK)
+  --
+  Title: varchar(128)
+  Type: varchar(128)
+  Price: double
+  Release_Date: datetime
+  Rating: int(11)
+  Required_Age: int(11)
+  Is_Multiplayer: int(11)
+}
+
+entity "Games" {
+  +**steamid**: bigint(20) unsigned (PK)
+  +**appid**: int(10) unsigned (PK)
+  --
+  playtime_2weeks: int(10) unsigned
+  playtime_forever: int(10) unsigned
+}
+
+entity "Games_Info" {
+  +**appid**: int(10) unsigned (PK)
+  --
+  Developer: varchar(64)
+  Genre: varchar(64)
+  Publisher: varchar(64)
+}
+
+entity "Player_Summaries" {
+  +**steamid**: bigint(20) unsigned (PK)
+  + **personaname**: varchar(64)
+  --
+  lastlogoff: datetime
+  realname: varchar(128)
+  timecreated: datetime
+  loccountrycode: varchar(2)
+  locstatecode: varchar(4)
+}
+
+entity "Achievement_Percentages" {
+  +**appid**: int(10) unsigned (PK)
+  +**Name**: varchar(64) (PK)
+  --
+  Percentage: float
+}
+
+
+entity "Friends" {
+  +**steamid_a**: bigint(20) unsigned (PK)
+  +**steamid_b**: bigint(20) unsigned (PK)
+  --
+  relationship: varchar(32)
+  friend_since: datetime
+}
+
+' Relationships
+App_ID_Info ||--o{ Games : Has
+App_ID_Info ||--|| Games_Info : Info
+App_ID_Info ||--o{ Achievement_Percentages : Has
+Achievement_Percentages }o--o{ Player_Summaries : By
+Player_Summaries ||--o{ Friends : Friends
+Friends }o--o{ Player_Summaries : Are
+Games --o{ Player_Summaries : Plays
+
+@enduml
