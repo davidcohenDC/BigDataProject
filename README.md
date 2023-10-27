@@ -1,16 +1,15 @@
-# Tra Pixel e Dati: Un’Analisi delle Metriche dei Videogiochi
+# Between Pixels and Data: An Analysis of Videogame Metrics
 
-Il progetto si basa sull'analisi di un ampio dataset relativo a giocatori, giochi e applicazioni su Steam. Una descrizione dettagliata del dataset sarà fornita, seguita da una discussione su studi e risultati svolti.
+This project focuses on the analysis of a vast dataset related to players, games, and applications on Steam. A detailed description of the dataset will be provided, followed by a discussion on conducted studies and obtained results.
 
-### Dettagli sui File e Cartelle
+### Details on Files and Folders
 
-- **src**: Questa cartella contiene i notebook utilizzati nel progetto e gli script SQL.
-  - `project.ipynb`: Notebook Jupyter utilizzato su AWS per l'elaborazione dei dati.
-  - `analyze_data.ipynb`: Un notebook Python utilizzato in locale dedicato all'analisi e visualizzazione dei dati.
-  - **sql**: Cartella che contiene lo script SQL utilizzato per l'estrazione dei dati nell'istanza di MARIADB in docker.
+- **src**: This folder contains the notebooks used in the project and SQL scripts.
+  - `project.ipynb`: Jupyter notebook used on AWS for data processing.
+  - `analyze_data.ipynb`: A Python notebook used locally dedicated to data analysis and visualization.
+  - **sql**: Folder containing the SQL script used for data extraction on the MARIADB instance in Docker.
 
-
-- **docs**: Cartella che contiene vari documenti di supporto per il progetto.
-    - **dag**: All'interno ci sono tre sottocartelle (query1, query2, query3) che contengono rispettivamente i DAG dei singoli job e dei loro stages.
-    - **schemes**: Contiene tutti gli schemi di raffinamento dei dati. Questi schemi sono realizzati in PUML.
-    - **report**: Qui è presente il report finale del progetto, che dettaglia l'intero processo di elaborazione e analisi dei dati.
+- **docs**: Folder containing various supporting documents for the project.
+  - **dag**: Inside, there are three sub-folders (query1, query2, query3) each containing the DAGs for individual jobs and their stages.
+  - **schemes**: Contains all the data refinement schemes. These schemes are made in PUML.
+  - **report**: Here, you'll find the final project report detailing the entire data processing and analysis procedure.
